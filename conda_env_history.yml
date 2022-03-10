@@ -2,5 +2,5 @@ name: 2203statmaze
 channels:
   - defaults
 dependencies:
+  - python=3.9
   - black
-  - python=3.10

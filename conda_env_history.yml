@@ -1,0 +1,6 @@
+name: 2203statmaze
+channels:
+  - defaults
+dependencies:
+  - black
+  - python=3.10

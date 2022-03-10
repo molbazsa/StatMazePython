@@ -1,5 +1,10 @@
-def main():
-    print('nominal')
+from maze_window import MazeWindow
 
-if __name__ == '__main__':
+
+def main():
+    window = MazeWindow()
+    window.show()
+
+
+if __name__ == "__main__":
     main()

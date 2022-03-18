@@ -119,7 +119,7 @@ class EllerMazeGenerator:
         maze.cells[0][0][CellIndex.WALL_ABOVE.value] = False
         yield maze
 
-        for row in range(1, maze.width):
+        for row in range(1, maze.width - 1):
             maze.current_row = row
             set_id = EllerMazeGenerator.fillRow(maze, row, set_id)
             EllerMazeGenerator.connectRow(maze, row)
@@ -127,8 +127,12 @@ class EllerMazeGenerator:
             EllerMazeGenerator.joinCells(maze, row)
             yield maze
 
-        EllerMazeGenerator.joinLastRow(maze, row)
+        row = maze.width - 1
+        maze.current_row = row
+        set_id = EllerMazeGenerator.fillRow(maze, row, set_id)
+        EllerMazeGenerator.connectRow(maze, row)
         yield maze
+        EllerMazeGenerator.joinLastRow(maze, row)
         maze.exit = EllerMazeGenerator.exitPoint(self.width, self.height)
         yield maze
 

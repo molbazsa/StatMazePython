@@ -137,7 +137,7 @@ class EllerMazeGenerator:
 
         for maze in self.iterate():
             frame_maze.current_row = maze.current_row
-            frame_maze.exit_col = maze.exit_col
+            frame_maze.exit = maze.exit
             for col in range(maze.width):
                 cell = maze.cells[maze.current_row][col]
                 frame_maze.cells[maze.current_row][col] = cell

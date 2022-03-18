@@ -1,8 +1,9 @@
-from maze_window import MazeWindow
+from maze import EllerMazeGenerator, MazeWindow
 
 
 def main():
-    window = MazeWindow()
+    maze_generator = EllerMazeGenerator(15, 15)
+    window = MazeWindow(maze_generator)
     window.show()
 
 
